@@ -2,7 +2,7 @@
     <div>
         <h1>Add User</h1>
     </div>
-    <div class="submit-form">
+    <div class="submit-form flex justify-content-center">
         <div v-if="!submitted">
             <div>
                 <span class="p-float-label">
@@ -75,9 +75,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.submit-form {
-    max-width: 300px;
-    margin: auto;
-}
-</style>
+<style scoped></style>

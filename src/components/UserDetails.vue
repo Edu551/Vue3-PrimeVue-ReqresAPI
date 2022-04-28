@@ -2,30 +2,31 @@
     <h1>User Details</h1>
     <div>
         <div>
-            <span class="p-float-label">
-                <InputText
-                    id="usernumber"
-                    type="text"
-                    v-model="currentUser.id"
-                />
-                <label for="usernumber">Número do Usuário</label>
-                <Button
-                    label="Buscar Usuário"
-                    class="p-button-rounded p-button-secondary mt-3 ml-7"
-                    @click="getUser"
-                />
-            </span>
-        </div>
-        <div>
-            <h4>Usuário</h4>
-            <div key="{{currentUser.id}}">
-                <label>Nome</label>
-                {{ currentUser.first_name }}
-            </div>
-            <div key="{{currentUser.id}}">
-                <label>Sobrenome</label>
-                {{ currentUser.last_name }}
-            </div>
+            <Card style="width: 18rem">
+                <template #title>Usuário</template>
+                <template #content>
+                    <p><b>Nome:</b> {{ currentUser.first_name }}</p>
+                    <p><b>Sobrenome:</b> {{ currentUser.last_name }}</p>
+                </template>
+                <template #footer>
+                    <span class="p-float-label">
+                        <InputText
+                            class="ml-4"
+                            id="usernumber"
+                            type="text"
+                            v-model="currentUser.id"
+                        />
+                        <label class="texto" for="usernumber">
+                            ID do Usuário
+                        </label>
+                        <Button
+                            label="Buscar Usuário"
+                            class="p-button-rounded p-button-secondary mt-3"
+                            @click="getUser"
+                        />
+                    </span>
+                </template>
+            </Card>
         </div>
     </div>
 </template>
@@ -81,4 +82,11 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style scoped>
+.texto {
+    margin: -2.3rem 0 0 1.5rem;
+}
+Button {
+    margin-left: 3.3rem;
+}
+</style>
